@@ -1,10 +1,13 @@
-package com.atifniyaz.opencv;
+package com.techhounds.imgcv;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.SurfaceView;
 import android.view.WindowManager;
+
+import com.atifniyaz.opencv.R;
+import com.techhounds.imgcv.filters.GrayScale;
 
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.CameraBridgeViewBase;
@@ -15,7 +18,7 @@ import org.opencv.core.Mat;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class MainActivity extends AppCompatActivity implements CameraBridgeViewBase.CvCameraViewListener2 {
+public class LiveView extends AppCompatActivity implements CameraBridgeViewBase.CvCameraViewListener2 {
 
     static {
         System.loadLibrary("opencv_java");
@@ -40,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
 
         if(processor == null) {
             processor = new Timer();
-            processor.scheduleAtFixedRate(new ProcessorTask(), 0, (long) (1 / 30.0 * 1000.0));
+            processor.schedule(new ProcessorTask(), 0, (long) (1 / 100.0 * 1000.0));
         }
     }
 
@@ -104,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
 
         if(processor == null) {
             processor = new Timer();
-            processor.scheduleAtFixedRate(new ProcessorTask(), 0, (long) (1 / 30.0 * 1000.0));
+            processor.scheduleAtFixedRate(new ProcessorTask(), 0, (long) (1 / 100.0 * 1000.0));
         }
 
         OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_2_4_11, this, mLoaderCallback);
@@ -112,9 +115,12 @@ public class MainActivity extends AppCompatActivity implements CameraBridgeViewB
 
     public class ProcessorTask extends TimerTask {
 
+        private GrayScale filter = new GrayScale();
+
         public void run() {
             if(currentFrame != null) {
-                processedFrame = currentFrame;
+                Mat frame = filter.process(currentFrame);
+                processedFrame = frame;
             }
         }
     }
