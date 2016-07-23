@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/OpenCV-Testing.iml" filepath="$PROJECT_DIR$/OpenCV-Testing.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/imgCV-android.iml" filepath="$PROJECT_DIR$/imgCV-android.iml" />
       <module fileurl="file://$PROJECT_DIR$/imgcv/imgcv.iml" filepath="$PROJECT_DIR$/imgcv/imgcv.iml" />
       <module fileurl="file://$PROJECT_DIR$/openCVLibrary2411/openCVLibrary2411.iml" filepath="$PROJECT_DIR$/openCVLibrary2411/openCVLibrary2411.iml" />
     </modules>

@@ -1,4 +1,4 @@
-package com.atifniyaz.opencv_testing;
+package com.atifniyaz.opencv;
 
 import org.junit.Test;
 
