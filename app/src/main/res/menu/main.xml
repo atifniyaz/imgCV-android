@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <item android:id="@+id/menu_filter"
+        android:icon="@drawable/ic_filter"
+        android:orderInCategory="3"
+        android:title="Filters"
+        app:showAsAction="ifRoom"/>
+
+    <item android:id="@+id/menu_toggle"
+        android:icon="@drawable/ic_menu_stop"
+        android:orderInCategory="1"
+        android:title="Toggle"
+        app:showAsAction="always"/>
+
+    <item android:id="@+id/menu_calibration"
+        android:icon="@drawable/ic_calibration"
+        android:orderInCategory="2"
+        android:title="Calibrate"
+        app:showAsAction="always"/>
+</menu>
